@@ -1,13 +1,16 @@
+#
+# TODO: - change binary name from mame to sdlmame
+#
 %define		file_version	%(echo %{version} | tr -d .)
 Summary:	SDL fork of MAME
 Summary(pl.UTF-8):	Emulator MAME napisany w SDL
 Name:		sdlmame
-Version:	0.133u1
+Version:	0.133u2
 Release:	0.1
 License:	Distributable
 Group:		X11/Applications/Games
 Source0:	http://rbelmont.mameworld.info/%{name}%{file_version}.zip
-# Source0-md5:	798d791a25a01fceead1122e6cb26b51
+# Source0-md5:	1d35b9ca41115be0614669f23d7b7aed
 Patch0:		%{name}-cflags.patch
 URL:		http://rbelmont.mameworld.info
 BuildRequires:	unzip
