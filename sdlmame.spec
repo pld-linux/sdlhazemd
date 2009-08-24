@@ -1,19 +1,20 @@
-#
-# TODO: - change binary name from mame to sdlmame
-#
 %define		file_version	%(echo %{version} | tr -d .)
 Summary:	SDL fork of MAME
 Summary(pl.UTF-8):	Emulator MAME napisany w SDL
 Name:		sdlmame
-Version:	0.133u2
-Release:	0.1
+Version:	0.133u3
+Release:	1
 License:	Distributable
 Group:		X11/Applications/Games
 Source0:	http://rbelmont.mameworld.info/%{name}%{file_version}.zip
-# Source0-md5:	1d35b9ca41115be0614669f23d7b7aed
+# Source0-md5:	f78768bd7603b643dd4cac74ac7cac28
 Patch0:		%{name}-cflags.patch
 URL:		http://rbelmont.mameworld.info
+BuildRequires:	SDL-devel
+BuildRequires:	gtk+2-devel
+BuildRequires:	pkgconfig
 BuildRequires:	unzip
+BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,6 +34,7 @@ tysiącami gier od lat 70-tych po dziś dzień.
 %prep
 %setup -q -n %{name}%{file_version}
 %patch0 -p1
+%{__sed} -i 's/NAME = $(TARGET)/NAME = %{name}/' makefile
 
 %build
 %{__make} \
@@ -44,7 +46,7 @@ tysiącami gier od lat 70-tych po dziś dzień.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
-install mame $RPM_BUILD_ROOT%{_bindir}
+install sdlmame $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -52,4 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc SDLMAME.txt docs/* whatsnew_%{file_version}.txt whatsnew.txt
-%attr(755,root,root) %{_bindir}/mame
+%attr(755,root,root) %{_bindir}/sdlmame
