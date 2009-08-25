@@ -34,7 +34,9 @@ tysiącami gier od lat 70-tych po dziś dzień.
 %prep
 %setup -q -n %{name}%{file_version}
 %patch0 -p1
+
 %{__sed} -i 's/NAME = $(TARGET)/NAME = %{name}/' makefile
+%{__sed} -i 's/-Werror//' makefile
 
 %build
 %{__make} \
