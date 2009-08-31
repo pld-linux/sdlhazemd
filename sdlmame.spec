@@ -13,8 +13,8 @@ URL:		http://rbelmont.mameworld.info
 BuildRequires:	SDL-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	pkgconfig
-BuildRequires:	unzip
 BuildRequires:	sed >= 4.0
+BuildRequires:	unzip
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
