@@ -1,3 +1,6 @@
+#
+# TODO: make it builds on 64 bits
+#
 %define		file_version	%(echo %{version} | tr -d .)
 Summary:	SDL fork of MAME
 Summary(pl.UTF-8):	Emulator MAME napisany w SDL
