@@ -5,12 +5,12 @@
 Summary:	SDL fork of MAME
 Summary(pl.UTF-8):	Emulator MAME napisany w SDL
 Name:		sdlmame
-Version:	0.133u4
+Version:	0.134
 Release:	1
 License:	Distributable
 Group:		X11/Applications/Games
 Source0:	http://rbelmont.mameworld.info/%{name}%{file_version}.zip
-# Source0-md5:	407345a8bc5148e508cc5ba9dfa06d21
+# Source0-md5:	706429e5ecf2ed48c1a732d0dc9c0f94
 Patch0:		%{name}-cflags.patch
 URL:		http://rbelmont.mameworld.info
 BuildRequires:	SDL-devel
@@ -58,5 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc SDLMAME.txt docs/* whatsnew_%{file_version}.txt whatsnew.txt
+%doc SDLMAME.txt docs/* whatsnew.txt
 %attr(755,root,root) %{_bindir}/sdlmame
