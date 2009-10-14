@@ -5,15 +5,16 @@
 Summary:	SDL fork of MAME
 Summary(pl.UTF-8):	Emulator MAME napisany w SDL
 Name:		sdlmame
-Version:	0.134u2
+Version:	0.134u3
 Release:	1
 License:	Distributable
 Group:		X11/Applications/Games
 Source0:	http://rbelmont.mameworld.info/%{name}%{file_version}.zip
-# Source0-md5:	255c1b44d268a530344572694d282247
+# Source0-md5:	7531c3f4e2a21d4e259ecbf40dc3b206
 Patch0:		%{name}-cflags.patch
 Patch1:		%{name}-duplicate_options.patch
 URL:		http://rbelmont.mameworld.info
+BuildRequires:	GConf2-devel
 BuildRequires:	SDL-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	pkgconfig
@@ -32,8 +33,8 @@ hundreds of machine chipsets with thousands of games from back in the
 %description -l pl.UTF-8
 SDLMAME ma być zastąpieniem dla MIA xmame, jednak nie ma z nim nic
 wspólnego. Był on rozwijany odzielnie bazując na oryginalnym
-emulatorze MAME, wspierającym setki układów komputerowych z
-tysiącami gier od lat 70-tych po dziś dzień.
+emulatorze MAME, wspierającym setki układów komputerowych z tysiącami
+gier od lat 70-tych po dziś dzień.
 
 %prep
 %setup -q -n %{name}%{file_version}
