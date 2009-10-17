@@ -45,6 +45,9 @@ gier od lat 70-tych po dziś dzień.
 
 %build
 %{__make} \
+%ifarch %{x8664}
+	PTR64=1 \
+%endif
 	CC="%{__cc}" \
 	OPTFLAGS="%{rpmcflags}" \
 	LDFLAGS="%{rpmldflags}"
