@@ -1,12 +1,9 @@
-#
-# TODO: make it builds on 64 bits
-#
 %define		file_version	%(echo %{version} | tr -d .)
 Summary:	SDL fork of MAME
 Summary(pl.UTF-8):	Emulator MAME napisany w SDL
 Name:		sdlmame
 Version:	0.134u3
-Release:	1
+Release:	2
 License:	Distributable
 Group:		X11/Applications/Games
 Source0:	http://rbelmont.mameworld.info/%{name}%{file_version}.zip
