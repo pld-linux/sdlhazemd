@@ -21,6 +21,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
 BuildRequires:	zlib-devel
+Suggests:	gmameui
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
