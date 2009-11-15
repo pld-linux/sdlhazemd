@@ -12,6 +12,7 @@ Patch0:		%{name}-cflags.patch
 Patch1:		%{name}-duplicate_options.patch
 URL:		http://rbelmont.mameworld.info
 BuildRequires:	GConf2-devel
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	SDL-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	pkgconfig
