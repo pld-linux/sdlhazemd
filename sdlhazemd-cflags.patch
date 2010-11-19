@@ -1,0 +1,31 @@
+--- sdlmame0133u1/makefile~	2009-06-11 06:38:13.000000000 +0200
++++ sdlmame0133u1/makefile	2009-08-12 12:29:55.000000000 +0200
+@@ -570,15 +570,15 @@
+ 
+ $(OBJ)/%.o: $(SRC)/%.c | $(OSPREBUILD)
+ 	@echo Compiling $<...
+-	$(CC) $(CDEFS) $(CFLAGS) -c $< -o $@
++	$(CC) $(CDEFS) $(OPTFLAGS) $(CFLAGS) -c $< -o $@
+ 
+ $(OBJ)/%.pp: $(SRC)/%.c | $(OSPREBUILD)
+ 	@echo Compiling $<...
+-	$(CC) $(CDEFS) $(CFLAGS) -E $< -o $@
++	$(CC) $(CDEFS) $(OPTFLAGS) $(CFLAGS) -E $< -o $@
+ 
+ $(OBJ)/%.s: $(SRC)/%.c | $(OSPREBUILD)
+ 	@echo Compiling $<...
+-	$(CC) $(CDEFS) $(CFLAGS) -S $< -o $@
++	$(CC) $(CDEFS) $(OPTFLAGS) $(CFLAGS) -S $< -o $@
+ 
+ $(OBJ)/%.lh: $(SRC)/%.lay $(FILE2STR)
+ 	@echo Converting $<...
+--- sdlhazemd014a/src/osd/sdl/sdl.mak~	2009-10-04 19:06:40.000000000 +0200
++++ sdlhazemd014a/src/osd/sdl/sdl.mak	2010-11-19 14:12:14.345852668 +0100
+@@ -282,7 +282,6 @@
+ OSDCOREOBJS += $(SDLOBJ)/debugwin.o $(SDLOBJ)/dview.o $(SDLOBJ)/debug-sup.o $(SDLOBJ)/debug-intf.o
+ CFLAGS += `pkg-config --cflags gtk+-2.0` `pkg-config --cflags gconf-2.0` 
+ LIBS += `pkg-config --libs gtk+-2.0` `pkg-config --libs gconf-2.0`
+-CFLAGS += -DGTK_DISABLE_DEPRECATED
+ else
+ OSDCOREOBJS += $(SDLOBJ)/debugwin.o
+ endif # NO_X11
